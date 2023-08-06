@@ -36,10 +36,10 @@ export default function Dashboard({showPopup}) {
         })
         const data = response.data
   
-        let responseOK = response && response.status === 200 && response.statusText === 'OK';
+        let responseOK = response && response.status === 200;
 
         if (!responseOK) {
-          alert(data.error)
+          alert(JSON.stringify(data))
           return
         }
   

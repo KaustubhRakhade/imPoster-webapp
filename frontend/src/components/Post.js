@@ -32,7 +32,7 @@ export default function Post({post, editPost, isEditing}) {
             const response = await axios.get("https://imposter-webapp.onrender.com" + `/api/rate/${action}/` + post._id, config)
 
             const data = await response.data
-            let responseOK = response && response.status === 200 && response.statusText === 'OK';
+            let responseOK = response && response.status === 200;
 
             if (!responseOK) {
                 alert(data.error)
@@ -71,7 +71,7 @@ export default function Post({post, editPost, isEditing}) {
             const response = await axios.delete("https://imposter-webapp.onrender.com" + "/api/posts/" + post._id, config)
 
             const data = await response.data
-            let responseOK = response && response.status === 200 && response.statusText === 'OK';
+            let responseOK = response && response.status === 200;
 
             if (!responseOK) {
                 alert(data.error)

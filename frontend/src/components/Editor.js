@@ -33,7 +33,7 @@ export default function Editor({ textInEditor, setTextInEditor, isEditing, setIs
         const response = await axios.post("https://imposter-webapp.onrender.com" + "/api/posts/", post, config)
         const data = response.data
 
-        let responseOK = response && response.status === 200 && response.statusText === 'OK';
+        let responseOK = response && response.status === 200;
 
         if (!responseOK) {
           alert(data.error)
@@ -76,7 +76,7 @@ export default function Editor({ textInEditor, setTextInEditor, isEditing, setIs
       const response = await axios.patch("https://imposter-webapp.onrender.com" + "/api/posts/" + isEditing, post, config)
       const data = await response.data
 
-      let responseOK = response && response.status === 200 && response.statusText === 'OK';
+      let responseOK = response && response.status === 200;
 
       if (!responseOK) {
         alert(data.error)

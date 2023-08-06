@@ -100,7 +100,7 @@ export default function SignUp({showPopup}) {
                 const response = await axios.post("https://imposter-webapp.onrender.com" + "/api/user/check/", body, config)
                 const isDuplicate = await response.data
             
-                let responseOK = response && response.status === 200 && response.statusText === 'OK';
+                let responseOK = response && response.status === 200;
         
                 if (!responseOK) {
                     console.log(isDuplicate)
