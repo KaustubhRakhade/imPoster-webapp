@@ -12,7 +12,7 @@ export const useSignUp = () => {
 
         console.log({username, email, password})
 
-        const response = await fetch(process.env.BACKEND + "/api/user/signup", {
+        const response = await fetch("https://imposter-webapp.onrender.com" + "/api/user/signup", {
             method: "POST",
             headers: {
                 'Content-Type': "application/json"
