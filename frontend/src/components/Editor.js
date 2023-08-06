@@ -30,7 +30,7 @@ export default function Editor({ textInEditor, setTextInEditor, isEditing, setIs
 
       try {
 
-        const response = await axios.post("/api/posts/", post, config)
+        const response = await axios.post(process.env.BACKEND + "/api/posts/", post, config)
         const data = response.data
 
         let responseOK = response && response.status === 200 && response.statusText === 'OK';
@@ -73,7 +73,7 @@ export default function Editor({ textInEditor, setTextInEditor, isEditing, setIs
 
     try {
 
-      const response = await axios.patch("/api/posts/" + isEditing, post, config)
+      const response = await axios.patch(process.env.BACKEND + "/api/posts/" + isEditing, post, config)
       const data = await response.data
 
       let responseOK = response && response.status === 200 && response.statusText === 'OK';

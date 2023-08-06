@@ -29,7 +29,7 @@ export default function Post({post, editPost, isEditing}) {
 
         try {
 
-            const response = await axios.get(`/api/rate/${action}/` + post._id, config)
+            const response = await axios.get(process.env.BACKEND + `/api/rate/${action}/` + post._id, config)
 
             const data = await response.data
             let responseOK = response && response.status === 200 && response.statusText === 'OK';
@@ -68,7 +68,7 @@ export default function Post({post, editPost, isEditing}) {
         try {
 
 
-            const response = await axios.delete("/api/posts/" + post._id, config)
+            const response = await axios.delete(process.env.BACKEND + "/api/posts/" + post._id, config)
 
             const data = await response.data
             let responseOK = response && response.status === 200 && response.statusText === 'OK';

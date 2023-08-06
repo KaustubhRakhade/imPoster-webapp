@@ -187,12 +187,12 @@ export default function SignUp({showPopup}) {
         />
 
         <div id="input-bottom">
-            <input type="checkbox" name="" id="rememberCheckbox" />
+            {/* <input type="checkbox" name="" id="rememberCheckbox" />
             <label htmlFor="rememberCheckbox">
                 <span className='material-icons-round'>check_box_outline_blank</span>
                 <span className='material-icons-round'>check_box</span>
                 <span>Remember me</span>
-            </label>
+            </label> */}
 
             <div onClick={handleSignUp} ref={submitRef} id="signInBtn">
                 <span className='material-icons-round'>login</span>
