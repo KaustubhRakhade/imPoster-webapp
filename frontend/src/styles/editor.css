@@ -1,0 +1,126 @@
+#editor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 45rem;
+    border-radius: 1rem;
+    background: #1b2730;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    column-gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+#editor #user-image-pc {
+    height: 3rem;
+    width: 3rem;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+#editor #user-image-mob {
+    display: none;
+    height: 2.4rem;
+    width: 2.4rem;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+#editor-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+#editor textarea {
+    background-color: #27333d;
+    font-family: 'REM', sans-serif;
+    box-sizing: border-box;
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 1rem 1.5rem;
+    color: #fffd;
+    font-size: 1.2rem;
+    height: min-content;
+    resize: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+#editor textarea:focus {
+    outline: solid 0.1rem #4b93ff;
+    box-shadow: 0 0 1rem #4b93ff99;
+}
+
+
+#editor textarea::placeholder {
+    color: #fff9;
+}
+
+#editor-controls {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+}
+
+#editor-controls div {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: solid #2c3a46 0.1rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    align-items: center;
+    color: #fff9;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+#editor-controls div.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#editor #shareBtn {
+    margin-left: auto;
+}
+
+#editor #add-image .material-icons-round {
+    color: #20da97;
+    text-shadow: 0 0 1rem #20da9799;
+}
+
+#editor #shareBtn .material-icons-round {
+    color: #4b93ff;
+    text-shadow: 0 0 1rem #4b93ff99;
+}
+
+#editor #discardBtn .material-icons-round {
+    color: #ff6a6a;
+    text-shadow: 0 0 1rem #ff6a6a99;
+}
+
+#editor-controls div .material-icons-round {
+    font-size: 1.25rem;
+}
+
+@media only screen and (max-width: 480px) {
+    #editor { padding: 1rem; }
+    #editor textarea { padding: 1rem; }
+    #editor #user-image-pc { display: none; }
+    #editor #user-image-mob { display: block; }
+  }
+
+@media only screen and (max-width: 380px) {
+    #editor {
+        border-radius: 0;
+        margin-top: 0.5rem;
+    }
+
+    #editor-controls div span:nth-of-type(2) {
+        display: none;
+    }
+}
