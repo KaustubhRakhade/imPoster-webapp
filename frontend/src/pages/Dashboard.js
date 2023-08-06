@@ -28,7 +28,7 @@ export default function Dashboard({showPopup}) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios("/api/posts/", {
+        const response = await axios(process.env.BACKEND + "/api/posts/", {
           method: "GET",
           headers: {
             'Authorization': `Bearer ${user.token}`

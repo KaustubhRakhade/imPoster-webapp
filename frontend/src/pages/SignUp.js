@@ -97,7 +97,7 @@ export default function SignUp({showPopup}) {
 
         const checkDuplicate = async () => {
             try {
-                const response = await axios.post("/api/user/check/", body, config)
+                const response = await axios.post(process.env.BACKEND + "/api/user/check/", body, config)
                 const isDuplicate = await response.data
             
                 let responseOK = response && response.status === 200 && response.statusText === 'OK';
