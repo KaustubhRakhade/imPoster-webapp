@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import useAuthContext from "./useAuthContext"
+import API from '../API'
 
 export const useSignUp = () => {
     const [error, setError] = useState(null)
@@ -12,7 +13,7 @@ export const useSignUp = () => {
 
         console.log({username, email, password})
 
-        const response = await fetch("https://imposter-webapp.onrender.com" + "/api/user/signup", {
+        const response = await fetch(API + "/api/user/signup", {
             method: "POST",
             headers: {
                 'Content-Type': "application/json"

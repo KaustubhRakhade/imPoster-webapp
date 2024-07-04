@@ -5,6 +5,7 @@ import { PostContext } from "../context/PostContext";
 import useAuthContext from "../hooks/useAuthContext";
 import axios from "axios"
 import useSignOut from '../hooks/useSignOut';
+import API from '../API';
 
 
 export default function Post({post, editPost, isEditing}) {
@@ -29,7 +30,7 @@ export default function Post({post, editPost, isEditing}) {
 
         try {
 
-            const response = await axios.get("https://imposter-webapp.onrender.com" + `/api/rate/${action}/` + post._id, config)
+            const response = await axios.get(API + `/api/rate/${action}/` + post._id, config)
 
             const data = await response.data
             let responseOK = response && response.status === 200;
@@ -67,8 +68,7 @@ export default function Post({post, editPost, isEditing}) {
 
         try {
 
-
-            const response = await axios.delete("https://imposter-webapp.onrender.com" + "/api/posts/" + post._id, config)
+            const response = await axios.delete(API + "/api/posts/" + post._id, config)
 
             const data = await response.data
             let responseOK = response && response.status === 200;
@@ -116,7 +116,7 @@ export default function Post({post, editPost, isEditing}) {
         ratePost("dislike")
     }
 
-    let timeGap = Date.now() - post.createdAt;
+    let timeGap = Date.now() - new Date(post.createdAt);
     let descTimeGap = "just now";
 
     const timeUnits = [

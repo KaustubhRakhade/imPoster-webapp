@@ -1,5 +1,5 @@
-const API = process.env.isTesting
-  ? "http://localhost:4000"
+const API = true
+  ? "http://localhost:8888"
   : "https://imposter-webapp.onrender.com";
 
 export default API;

@@ -5,7 +5,7 @@ import { PostContext } from "../context/PostContext";
 import useAuthContext from "../hooks/useAuthContext";
 import axios from "axios"
 import useSignOut from '../hooks/useSignOut';
-
+import API from '../API';
 
 export default function Editor({ textInEditor, setTextInEditor, isEditing, setIsEditing, textfieldRef}) {
 
@@ -30,7 +30,7 @@ export default function Editor({ textInEditor, setTextInEditor, isEditing, setIs
 
       try {
 
-        const response = await axios.post("https://imposter-webapp.onrender.com" + "/api/posts/", post, config)
+        const response = await axios.post(API + "/api/posts/", post, config)
         const data = response.data
 
         let responseOK = response && response.status === 200;
@@ -73,7 +73,7 @@ export default function Editor({ textInEditor, setTextInEditor, isEditing, setIs
 
     try {
 
-      const response = await axios.patch("https://imposter-webapp.onrender.com" + "/api/posts/" + isEditing, post, config)
+      const response = await axios.patch(API + "/api/posts/" + isEditing, post, config)
       const data = await response.data
 
       let responseOK = response && response.status === 200;

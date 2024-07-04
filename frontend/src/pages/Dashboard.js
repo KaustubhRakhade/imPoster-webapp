@@ -5,6 +5,7 @@ import { PostContext } from "../context/PostContext";
 import useAuthContext from "../hooks/useAuthContext";
 import axios from "axios"
 import useSignOut from '../hooks/useSignOut';
+import API from "../API";
 
 export default function Dashboard({showPopup}) {
   const {posts, dispatch} = useContext(PostContext)
@@ -28,7 +29,7 @@ export default function Dashboard({showPopup}) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios("https://imposter-webapp.onrender.com" + "/api/posts/", {
+        const response = await axios(API + "/api/posts/", {
           method: "GET",
           headers: {
             'Authorization': `Bearer ${user.token}`
