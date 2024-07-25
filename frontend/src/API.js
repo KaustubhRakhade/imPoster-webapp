@@ -1,5 +1,5 @@
-const API = true
-  ? "http://localhost:8888"
-  : "https://imposter-webapp.onrender.com";
+// const API = "http://localhost:8888"
+const API = "https://imposter-webapp-api.netlify.app"
+// const API : "https://imposter-webapp.onrender.com";
 
 export default API;
